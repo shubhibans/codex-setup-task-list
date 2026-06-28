@@ -1,7 +1,7 @@
 # Codex Setup Task List
 
-Version: v0.4  
-Status: Draft — P2 Completed  
+Version: v0.5  
+Status: Draft — P3 Completed  
 Owner: Shubham Bansal  
 Last Updated: 2026-06-28  
 
@@ -101,6 +101,11 @@ Use Markdown checkboxes and strikethrough.
 
 ## 6. Changelog
 
+### v0.5 — P3 Completed
+- Marked P3 complete after Shubham approved the subagent role charter.
+- Recorded approved decision notes for P3-T01 through P3-T22.
+- Moved the current position to P4-T01.
+
 ### v0.4 — P2 Completed
 - Marked P2 complete after Shubham approved the skill/workflow decisions.
 - Recorded approved decision notes for P2-T01 through P2-T20.
@@ -137,8 +142,8 @@ Use Markdown checkboxes and strikethrough.
 | P0 | Working rules between Shubham and assistant | Complete | Stabilize how setup guidance will be given |
 | P1 | Define the Codex operating system | Complete | Decide how Codex should behave as a dev/product team |
 | P2 | Choose core skills/workflows | Complete | Decide what Codex skills/workflows are needed |
-| P3 | Define subagent roles | In Progress | Decide virtual team roles and decision boundaries |
-| P4 | Define documentation system | Not Started | Decide what persistent docs are needed and how they are governed |
+| P3 | Define subagent roles | Complete | Decide virtual team roles and decision boundaries |
+| P4 | Define documentation system | In Progress | Decide what persistent docs are needed and how they are governed |
 | P5 | Define ADR process | Not Started | Decide how architecture/product decisions are recorded |
 | P6 | Define discovery and interview engine | Not Started | Decide how stakeholder/worklog discovery will work |
 | P7 | Define product specification engine | Not Started | Decide how discovery becomes specs/PRD/backlog |
@@ -399,7 +404,7 @@ Approved skill/workflow list and usage sequence.
 
 # P3 — Define Subagent Roles
 
-Status: In Progress
+Status: Complete
 
 ## Goal
 
@@ -407,28 +412,72 @@ Decide which virtual team roles Codex should simulate, what each role owns, and 
 
 ## Tasks
 
-- [ ] P3-T01 Define what a “subagent” means in this setup.
-- [ ] P3-T02 Decide whether subagents are needed at all.
-- [ ] P3-T03 Define criteria for creating a subagent role.
-- [ ] P3-T04 Identify candidate subagent roles for discussion.
-- [ ] P3-T05 Define each approved subagent’s responsibility.
-- [ ] P3-T06 Define each approved subagent’s forbidden areas.
-- [ ] P3-T07 Define when each subagent should be used.
-- [ ] P3-T08 Define when each subagent should not be used.
-- [ ] P3-T09 Define whether subagents can create artifacts or only review/propose.
-- [ ] P3-T10 Define how subagent outputs are summarized.
-- [ ] P3-T11 Define how subagent disagreements are handled.
-- [ ] P3-T12 Define how final decisions are accepted.
-- [ ] P3-T13 Define whether there should be a product role.
-- [ ] P3-T14 Define whether there should be a DDD/domain role.
-- [ ] P3-T15 Define whether there should be a data/architecture role.
-- [ ] P3-T16 Define whether there should be an AI/matching role.
-- [ ] P3-T17 Define whether there should be a security/compliance role.
-- [ ] P3-T18 Define whether there should be a UX/design role.
-- [ ] P3-T19 Define whether there should be an implementation-pragmatist role.
-- [ ] P3-T20 Define whether there should be a code-review role.
-- [ ] P3-T21 Define whether there should be an ADR/decision-record role.
-- [ ] P3-T22 Decide which subagents are approved, rejected, or deferred.
+- [x] ~~P3-T01 Define what a “subagent” means in this setup.~~  
+  Completed: 2026-06-28  
+  Decision/Note: A subagent is a named expert role or execution lens that Codex can simulate for a specific kind of thinking or work, such as product, domain modeling, security, UX, data, AI matching, implementation, code review, or ADR review. A subagent helps produce better recommendations or execute approved work, but does not approve decisions. Subagent means expert perspective/review/execution mode; it does not mean autonomous decision-maker, artifact creator by default, or approval authority.
+- [x] ~~P3-T02 Decide whether subagents are needed at all.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved. Subagents are needed because this project has multiple competing concerns: product usefulness, executive-search workflows, domain correctness, Twenty CRM boundary, custom backend ownership, candidate/search intelligence, AI advisory behavior, data/security boundaries, UX workflow clarity, implementation discipline, review quality, and decision traceability. A single generic Codex voice is likely to blur these concerns.
+- [x] ~~P3-T03 Define criteria for creating a subagent role.~~  
+  Completed: 2026-06-28  
+  Decision/Note: A subagent role is justified only if it has a distinct responsibility, recurring use case, clear boundary, clear forbidden area, useful review/execution lens, and a risk it helps reduce. No role should exist only because it sounds impressive.
+- [x] ~~P3-T04 Identify candidate subagent roles for discussion.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved candidate roles: `product-manager`, `ddd-architect`, `data-architect`, `ai-matching-architect`, `security-reviewer`, `ux-workflow-designer`, `implementation-pragmatist`, `software-engineer`, `code-reviewer`, and `adr-librarian`. Note: `software-engineer` is added as the bounded coding role. It is not an autonomous coder. It implements only approved issues/stories under approved P11 implementation and review rules.
+- [x] ~~P3-T05 Define each approved subagent’s responsibility.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved responsibilities: `product-manager` owns product clarity, user value, workflow usefulness, prioritization reasoning, and whether a feature solves a real executive-search problem. `ddd-architect` owns domain language, bounded contexts, entities, value objects, commands, events, states, business rules, and domain consistency. `data-architect` owns data ownership, CRM/custom-platform boundaries, source of truth, data movement, integration concerns, and persistence-model sanity. `ai-matching-architect` owns AI-assisted matching logic, advisory vs authoritative behavior, explainability, hallucination risk, ranking boundaries, and human-in-the-loop rules. `security-reviewer` owns privacy, access control, sensitive data, auditability, compliance risk, abuse cases, and security review prompts. `ux-workflow-designer` owns user journeys, screen/workflow clarity, empty/loading/error states, workflow friction, and design-system alignment. `implementation-pragmatist` owns practical build sequencing, vertical slicing, delivery risk, avoiding overengineering, and making sure work is implementable. `software-engineer` owns actual code implementation for approved issues/stories only. It writes code, tests, migrations, UI states, APIs, and implementation changes only when the relevant phase, approved spec/issue, acceptance criteria, and review path exist. It should work through branches/PRs, run checks, and report changed files, verification evidence, open questions, and limitations. `code-reviewer` owns code quality, tests, maintainability, correctness, regressions, review checklist, and verification evidence. `adr-librarian` owns decision hygiene: whether something needs a decision record, whether alternatives were considered, and whether decisions conflict.
+- [x] ~~P3-T06 Define each approved subagent’s forbidden areas.~~  
+  Completed: 2026-06-28  
+  Decision/Note: All subagents are forbidden from approving final decisions. Specific forbidden areas: `product-manager` cannot approve final product scope or priorities. `ddd-architect` cannot force domain structure without discovery validation. `data-architect` cannot decide technology stack, database, or integration architecture alone. `ai-matching-architect` cannot make AI authoritative over human judgment. `security-reviewer` cannot block all progress by default; must explain concrete risks and mitigation. `ux-workflow-designer` cannot create design-system artifacts or UI files before P9/P4 approval. `implementation-pragmatist` cannot bypass discovery/spec/quality rules in the name of speed. `software-engineer` cannot code from vague chat requests, create product scope, choose architecture alone, bypass tests, push direct-to-main, silently expand scope, or treat implementation as done without review/verification. `code-reviewer` cannot approve its own implementation blindly. `adr-librarian` cannot create ADR files before P5 approves the ADR process.
+- [x] ~~P3-T07 Define when each subagent should be used.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Use roles by work type: `product-manager` during discovery, PRD, scope, prioritization, and value checks. `ddd-architect` during domain modeling, workflow translation, entity/rule/state discussions. `data-architect` during CRM boundary, source-of-truth, integration, data model, and ownership decisions. `ai-matching-architect` during candidate matching, ranking, scoring, AI explanation, and recommendation design. `security-reviewer` during authentication, authorization, candidate/client data, audit, integrations, and AI-risk decisions. `ux-workflow-designer` during user journeys, dashboard/workflow screens, design system, and interaction design. `implementation-pragmatist` during issue slicing, build sequencing, trade-off analysis, and delivery planning. `software-engineer` during approved implementation work only, especially after P10/P11 define issue slicing, implementation workflow, branch/PR expectations, tests, and review rules. `code-reviewer` during implementation review, PR review, tests, quality gate, and bug fixes. `adr-librarian` during architecture/product decisions, reversals, rejected alternatives, and conflict checks.
+- [x] ~~P3-T08 Define when each subagent should not be used.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Subagents should not be used when they add ceremony without value. Do not use subagents for simple wording edits, minor task-list cleanup, obvious status updates, pure formatting, when the relevant phase is not active, when the role would create premature artifacts, or when Shubham asks for a direct answer only.
+- [x] ~~P3-T09 Define whether subagents can create artifacts or only review/propose.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Default rule: subagents can review, critique, structure, propose, and, for the software-engineer role, implement approved work only when implementation is explicitly allowed by the relevant phase and approved issue/spec. Subagents cannot create persistent artifacts unless the current phase explicitly allows it and Shubham approves. In P3, subagents are approved as thinking/review/execution roles, not as file generators.
+- [x] ~~P3-T10 Define how subagent outputs are summarized.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Subagent output should be summarized compactly using: Role, Concern, Recommendation, Risk, Decision needed, and Boundary. No long role-play transcripts unless Shubham asks.
+- [x] ~~P3-T11 Define how subagent disagreements are handled.~~  
+  Completed: 2026-06-28  
+  Decision/Note: When subagents disagree, Codex must surface the disagreement instead of hiding it. Codex should present the disagreement, why it matters, options, recommended resolution, and what Shubham must decide. Example: product-manager wants speed and workflow simplicity; security-reviewer flags access/privacy risk; data-architect flags source-of-truth ambiguity; implementation-pragmatist proposes a smaller sequence.
+- [x] ~~P3-T12 Define how final decisions are accepted.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Final decisions are accepted only when Shubham explicitly approves. Subagents can recommend, challenge, warn, review, or implement approved work, but cannot approve final decisions. Accepted decisions must be recorded in the current source of truth or later approved decision system.
+- [x] ~~P3-T13 Define whether there should be a product role.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved: `product-manager`. Purpose: keep Codex focused on user value, workflow usefulness, problem clarity, prioritization, and avoiding “cool but useless” features. Boundary: cannot approve final scope or invent stakeholder needs.
+- [x] ~~P3-T14 Define whether there should be a DDD/domain role.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved: `ddd-architect`. Purpose: protect domain correctness and prevent the system from becoming a generic CRUD app. Boundary: cannot impose abstract domain models without discovery evidence.
+- [x] ~~P3-T15 Define whether there should be a data/architecture role.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved: `data-architect`. Purpose: handle data ownership, source-of-truth rules, CRM/custom-platform boundaries, integration boundaries, and persistence sanity. Boundary: cannot decide stack or architecture alone.
+- [x] ~~P3-T16 Define whether there should be an AI/matching role.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved: `ai-matching-architect`. Purpose: define safe, explainable, human-in-the-loop AI matching and advisory intelligence. Boundary: cannot make AI authoritative, opaque, or decision-owning.
+- [x] ~~P3-T17 Define whether there should be a security/compliance role.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved: `security-reviewer`. Purpose: protect candidate/client data, access control, privacy, auditability, and abuse-risk thinking. Boundary: must identify concrete risks and mitigations, not generic fear.
+- [x] ~~P3-T18 Define whether there should be a UX/design role.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved: `ux-workflow-designer`. Purpose: ensure workflow clarity, screen-level usability, state design, and later design-system consistency. Boundary: cannot create UI/design-system artifacts before P9/P4 approval.
+- [x] ~~P3-T19 Define whether there should be an implementation-pragmatist role.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved: `implementation-pragmatist`. Purpose: keep delivery practical, sliced, testable, reviewable, and not overbuilt. Boundary: cannot bypass approved discovery/spec/review discipline. Additional approved implementation role: `software-engineer`. Purpose: perform actual coding work for approved issues/stories only. Boundary: cannot act as an autonomous builder, cannot code from vague chat, cannot expand scope, cannot bypass tests or review, and cannot decide when implementation is accepted.
+- [x] ~~P3-T20 Define whether there should be a code-review role.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved: `code-reviewer`. Purpose: review implementation quality, test coverage, maintainability, regressions, and verification evidence. Boundary: cannot mark its own work complete without evidence.
+- [x] ~~P3-T21 Define whether there should be an ADR/decision-record role.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved: `adr-librarian`. Purpose: detect decisions that need records, track alternatives, flag conflicts, and prevent undocumented architecture/product drift. Boundary: cannot create ADR files until P5 approves the ADR process.
+- [x] ~~P3-T22 Decide which subagents are approved, rejected, or deferred.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved: `product-manager`, `ddd-architect`, `data-architect`, `ai-matching-architect`, `security-reviewer`, `ux-workflow-designer`, `implementation-pragmatist`, `software-engineer`, `code-reviewer`, and `adr-librarian`. Rejected for now: `autonomous-builder`, `auto-prd-owner`, `auto-architecture-decider`, `auto-security-blocker`, `auto-refactor-agent`, `auto-ticket-creator`, and `autonomous-coder`. Deferred: `devops-infra-specialist`, `qa-automation-specialist`, `performance-reviewer`, and `integration-specialist`. Reason: these may be useful later, but P3 should avoid too many roles until the actual product repo and implementation phases make the need clear. Clarification: There is intentionally no approved “codes on its own” role. Instead, P3 approves `software-engineer` as a bounded implementation role. It may code only from approved specs/issues and under P10/P11 implementation, PR, testing, and review rules. This keeps coding power available without making Codex an uncontrolled autonomous builder.
 
 ## Completion Criteria
 
@@ -447,7 +496,7 @@ Approved subagent charter.
 
 # P4 — Define Documentation System
 
-Status: Not Started
+Status: In Progress
 
 ## Goal
 
@@ -887,9 +936,9 @@ Approved long-term maintenance and learning loop.
 
 # Current Position
 
-Current Phase: P3 — Define Subagent Roles  
-Current Task: P3-T01  
-Next Action: Define what a “subagent” means in this setup.
+Current Phase: P4 — Define Documentation System  
+Current Task: P4-T01  
+Next Action: Define why documentation is needed in the Codex setup.
 
 # Global Completion Criteria
 
