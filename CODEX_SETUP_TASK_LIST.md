@@ -1,7 +1,7 @@
 # Codex Setup Task List
 
-Version: v0.3  
-Status: Draft — P1 Completed  
+Version: v0.4  
+Status: Draft — P2 Completed  
 Owner: Shubham Bansal  
 Last Updated: 2026-06-28  
 
@@ -101,6 +101,11 @@ Use Markdown checkboxes and strikethrough.
 
 ## 6. Changelog
 
+### v0.4 — P2 Completed
+- Marked P2 complete after Shubham approved the skill/workflow decisions.
+- Recorded approved decision notes for P2-T01 through P2-T20.
+- Moved the current position to P3-T01.
+
 ### v0.3 — P1 Completed
 - Marked P1 complete after Shubham approved the Codex operating principles.
 - Recorded approved decision notes for P1-T01 through P1-T20.
@@ -131,8 +136,8 @@ Use Markdown checkboxes and strikethrough.
 |---|---|---|---|
 | P0 | Working rules between Shubham and assistant | Complete | Stabilize how setup guidance will be given |
 | P1 | Define the Codex operating system | Complete | Decide how Codex should behave as a dev/product team |
-| P2 | Choose core skills/workflows | In Progress | Decide what Codex skills/workflows are needed |
-| P3 | Define subagent roles | Not Started | Decide virtual team roles and decision boundaries |
+| P2 | Choose core skills/workflows | Complete | Decide what Codex skills/workflows are needed |
+| P3 | Define subagent roles | In Progress | Decide virtual team roles and decision boundaries |
 | P4 | Define documentation system | Not Started | Decide what persistent docs are needed and how they are governed |
 | P5 | Define ADR process | Not Started | Decide how architecture/product decisions are recorded |
 | P6 | Define discovery and interview engine | Not Started | Decide how stakeholder/worklog discovery will work |
@@ -308,7 +313,7 @@ Approved Codex operating principles.
 
 # P2 — Choose Core Skills / Workflows
 
-Status: Not Started
+Status: Complete
 
 ## Goal
 
@@ -316,26 +321,66 @@ Decide which reusable skills/workflows Codex should use and in what sequence.
 
 ## Tasks
 
-- [ ] P2-T01 Define what a “skill/workflow” means in this setup.
-- [ ] P2-T02 Decide whether external engineering skills should be used.
-- [ ] P2-T03 Decide whether a discovery/grilling skill is needed.
-- [ ] P2-T04 Decide whether a domain-modeling skill is needed.
-- [ ] P2-T05 Decide whether a PRD-generation skill is needed.
-- [ ] P2-T06 Decide whether an issue-slicing skill is needed.
-- [ ] P2-T07 Decide whether a TDD skill is needed.
-- [ ] P2-T08 Decide whether a bug-diagnosis skill is needed.
-- [ ] P2-T09 Decide whether an architecture-improvement skill is needed.
-- [ ] P2-T10 Decide whether a pre-commit/quality-gate skill is needed.
-- [ ] P2-T11 Decide which skills are mandatory.
-- [ ] P2-T12 Decide which skills are optional.
-- [ ] P2-T13 Decide which skills are explicitly rejected.
-- [ ] P2-T14 Decide where skills should live, if any are approved.
-- [ ] P2-T15 Decide how skills should be invoked.
-- [ ] P2-T16 Decide whether skills should run automatically or only when instructed.
-- [ ] P2-T17 Decide how skill outputs should be reviewed.
-- [ ] P2-T18 Decide how skill outputs become accepted decisions.
-- [ ] P2-T19 Decide how to prevent skill overlap and contradictory outputs.
-- [ ] P2-T20 Decide how skill usage should be recorded.
+- [x] ~~P2-T01 Define what a “skill/workflow” means in this setup.~~  
+  Completed: 2026-06-28  
+  Decision/Note: A skill/workflow is a reusable Codex operating pattern for a specific type of work, such as discovery, domain modeling, PRD drafting, issue slicing, TDD, bug diagnosis, architecture review, or quality gating. It is not a subagent, not a person/role, and not an approval authority. It is a repeatable method Codex follows when the relevant phase/work type is active.
+- [x] ~~P2-T02 Decide whether external engineering skills should be used.~~  
+  Completed: 2026-06-28  
+  Decision/Note: External engineering skills may be used as reference material, inspiration, or reusable workflow candidates only after review. Codex should first check installed local skills, then search curated/reputable external skill sources if needed, then recommend reuse/adaptation/wrapping before recommending creation. No external skill may be installed, activated, or treated as approved without Shubham’s explicit approval.
+- [x] ~~P2-T03 Decide whether a discovery/grilling skill is needed.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved. A discovery/grilling workflow is needed to turn vague stakeholder/product ideas into structured questions, worklog exploration, workflows, pain points, actors, data objects, decisions, exceptions, assumptions, and open questions. Existing local candidates include `grilling`, `grill-me`, and `grill-with-docs`. These may be reused later with restrictions and must not convert discovery into approved product scope without Shubham’s approval.
+- [x] ~~P2-T04 Decide whether a domain-modeling skill is needed.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved. A domain-modeling workflow is needed to convert discovery/workflow understanding into domain language, entities, value objects, bounded contexts, commands, events, rules, and state transitions. Existing local candidate: `domain-modeling`. It is useful but unsafe as-is if it attempts to create `CONTEXT.md`, ADRs, or other docs before P4/P5 approval. It may be reused later only with setup-safe restrictions.
+- [x] ~~P2-T05 Decide whether a PRD-generation skill is needed.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved. A PRD/spec-generation workflow is needed to convert approved discovery and domain understanding into structured PRD/spec drafts, including scope, user stories, acceptance criteria, non-functional requirements, assumptions, risks, and open questions. Existing local candidate: `to-prd`. It is useful but unsafe as-is if it publishes to an issue tracker or assumes labels before P7/P10 approval. It may be reused later only with restrictions.
+- [x] ~~P2-T06 Decide whether an issue-slicing skill is needed.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved. An issue-slicing workflow is needed to convert approved specs into small, complete, reviewable vertical slices. Each issue/story should include acceptance criteria, implementation scope, tests/checks, data/security considerations, and review path. No clean dedicated local vertical-slice skill was found. Existing partial candidates include `triage`, `request-refactor-plan`, and parts of `to-prd`. Codex should search for suitable external/curated issue-slicing workflows before recommending adaptation or creation.
+- [x] ~~P2-T07 Decide whether a TDD skill is needed.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved. A TDD workflow is needed for implementation phases so Codex works test-first or test-aware rather than writing code first and adding weak tests later. Existing local candidate: `tdd`. This is one of the cleanest matches and may be used later when implementation is approved.
+- [x] ~~P2-T08 Decide whether a bug-diagnosis skill is needed.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved. A bug-diagnosis workflow is needed so Codex diagnoses failures systematically before changing code. It should reproduce, inspect evidence, identify likely cause, propose a fix, add/adjust tests, and verify. No clean general-purpose local bug-diagnosis skill was found. Existing partial candidates include `triage` and platform-specific testing/triage skills. Codex should search for suitable external/curated bug-diagnosis workflows before recommending adaptation or creation.
+- [x] ~~P2-T09 Decide whether an architecture-improvement skill is needed.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved, but controlled. Architecture-improvement workflows can help identify design drift, duplication, weak boundaries, poor abstractions, and maintainability issues. Existing local candidates include `improve-codebase-architecture`, `codebase-design`, and `request-refactor-plan`. These are useful but must not trigger broad refactors, reports, ADRs, or downstream artifact creation without approval.
+- [x] ~~P2-T10 Decide whether a pre-commit/quality-gate skill is needed.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved. A quality-gate workflow is needed so Codex checks formatting, linting, tests, type checks, build status, security concerns, changed files, and known limitations before calling work complete. No clean dedicated local quality-gate skill was found. Existing partial coverage exists in `implement`, some security validation skills, and platform-specific test/debug skills. Codex should search for suitable external/curated quality-gate workflows before recommending adaptation or creation.
+- [x] ~~P2-T11 Decide which skills are mandatory.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Mandatory workflow categories when the relevant work type is active: discovery/grilling, domain modeling, PRD/spec generation, issue slicing, TDD, bug diagnosis, and quality gate/pre-commit review. Mandatory means the discipline must be followed when that work type is active. It does not mean an installed skill is automatically active or approved as-is.
+- [x] ~~P2-T12 Decide which skills are optional.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Optional/controlled workflow categories: architecture improvement, codebase design review, refactor planning, and setup-safe wrappers/guardrail workflows. These are useful but can easily cause overbuilding, broad refactoring, or premature artifacts. They should run only when Shubham requests them or when Codex recommends them and Shubham approves.
+- [x] ~~P2-T13 Decide which skills are explicitly rejected.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Rejected for now: auto-implement-from-chat, auto-create-files, auto-create-agents, auto-create-adr, auto-create-product-scope, auto-refactor-large-areas, auto-publish-to-issue-tracker, auto-install-external-skills, and auto-activate-installed-skills. Reason: these violate P0/P1 rules that discussion is not approval, artifacts must not be created before the relevant phase, and Shubham remains final decision owner.
+- [x] ~~P2-T14 Decide where skills should live, if any are approved.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Conceptual future location for project-specific skills is likely `.agents/skills/` in the actual product repo. However, P2 does not approve creating folders/files yet. Actual location, naming, and file creation should be decided later when the documentation/file system and implementation setup allow it. Potential future skill paths, not approved for creation yet: `.agents/skills/grill-with-docs/`, `.agents/skills/domain-modeling/`, `.agents/skills/to-prd/`, `.agents/skills/to-issues/`, `.agents/skills/tdd/`, `.agents/skills/diagnosing-bugs/`, `.agents/skills/improve-codebase-architecture/`, `.agents/skills/quality-gate/`, `.agents/skills/setup-safe-wrapper/`.
+- [x] ~~P2-T15 Decide how skills should be invoked.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Skills/workflows should be invoked by phase and work type, not randomly: P6 Discovery uses `grill-with-docs` / `grilling`, restricted; P8 Domain modeling uses `domain-modeling`, restricted; P7 PRD/spec uses `to-prd`, restricted; P10 Issues/stories uses a dedicated issue-slicing workflow or adapted `triage`; P11 Implementation uses `tdd` plus quality-gate workflow; P11/P12 Bugs use bug-diagnosis plus `tdd` plus quality-gate workflow; P12 Architecture improvement uses `improve-codebase-architecture` / `codebase-design`, controlled. Codex must state which skill/workflow it is using when the work is significant.
+- [x] ~~P2-T16 Decide whether skills should run automatically or only when instructed.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Mandatory phase skills run automatically when their work type is active, but only as disciplined behavior. Optional or high-side-effect skills run only when Shubham asks or when Codex recommends them and Shubham approves. Installed skills with side effects must not run automatically.
+- [x] ~~P2-T17 Decide how skill outputs should be reviewed.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Skill outputs are drafts until approved. Codex must label outputs as draft, recommendation, needs approval, approved, rejected, or deferred. Skill output cannot become product truth, ADR truth, issue truth, implementation truth, or documentation truth until Shubham approves it and the relevant source of truth is updated if required.
+- [x] ~~P2-T18 Decide how skill outputs become accepted decisions.~~  
+  Completed: 2026-06-28  
+  Decision/Note: A skill output becomes accepted only when Shubham explicitly approves it, the relevant source-of-truth file is updated if required, the relevant phase/task records the decision, and later-phase follow-ups are documented. No skill can approve its own output.
+- [x] ~~P2-T19 Decide how to prevent skill overlap and contradictory outputs.~~  
+  Completed: 2026-06-28  
+  Decision/Note: When skills overlap or contradict one another, Codex must not silently merge outputs. Codex should identify the conflict, explain which skills/workflows are producing different conclusions, recommend a resolution, and ask for approval. The task-list hierarchy and latest explicit Shubham approval control the resolution.
+- [x] ~~P2-T20 Decide how skill usage should be recorded.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Codex should record skill/workflow usage when it materially affects a decision or artifact. For now, record this in task-list completion notes where relevant. Later, if approved, skill usage may also be recorded in `AGENTS.md`, decision records, PR descriptions, issue comments, or review notes. Those storage mechanisms are not approved yet. Additional note: Codex’s local inspection found these most relevant existing skills: `grilling`, `grill-me`, `grill-with-docs`, `domain-modeling`, `to-prd`, `tdd`, `triage`, `request-refactor-plan`, `codebase-design`, and `improve-codebase-architecture`. Codex also found many system/plugin/domain skills, but they are not approved for this meta setup unless a later phase approves them for a specific purpose.
 
 ## Completion Criteria
 
@@ -354,7 +399,7 @@ Approved skill/workflow list and usage sequence.
 
 # P3 — Define Subagent Roles
 
-Status: Not Started
+Status: In Progress
 
 ## Goal
 
@@ -842,9 +887,9 @@ Approved long-term maintenance and learning loop.
 
 # Current Position
 
-Current Phase: P2 — Choose Core Skills / Workflows  
-Current Task: P2-T01  
-Next Action: Define what a “skill/workflow” means in this setup.
+Current Phase: P3 — Define Subagent Roles  
+Current Task: P3-T01  
+Next Action: Define what a “subagent” means in this setup.
 
 # Global Completion Criteria
 
