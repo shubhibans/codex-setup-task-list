@@ -1,7 +1,7 @@
 # Codex Setup Task List
 
-Version: v0.2  
-Status: Draft — Mandatory Read Rule Added  
+Version: v0.2.1  
+Status: Draft — P0 Completed  
 Owner: Shubham Bansal  
 Last Updated: 2026-06-28  
 
@@ -101,6 +101,11 @@ Use Markdown checkboxes and strikethrough.
 
 ## 6. Changelog
 
+### v0.2.1 — P0 Completed
+- Marked P0 complete after Shubham approved the working rules.
+- Recorded the approved task-list update method.
+- Moved the current position to P1-T01.
+
 ### v0.2 — Mandatory Read Rule Added
 - Added a Mandatory Read / Reference Rule.
 - Clarified that this file is an operating protocol, not only a checklist.
@@ -119,8 +124,8 @@ Use Markdown checkboxes and strikethrough.
 
 | Phase | Name | Status | Purpose |
 |---|---|---|---|
-| P0 | Working rules between Shubham and assistant | In Progress | Stabilize how setup guidance will be given |
-| P1 | Define the Codex operating system | Not Started | Decide how Codex should behave as a dev/product team |
+| P0 | Working rules between Shubham and assistant | Complete | Stabilize how setup guidance will be given |
+| P1 | Define the Codex operating system | In Progress | Decide how Codex should behave as a dev/product team |
 | P2 | Choose core skills/workflows | Not Started | Decide what Codex skills/workflows are needed |
 | P3 | Define subagent roles | Not Started | Decide virtual team roles and decision boundaries |
 | P4 | Define documentation system | Not Started | Decide what persistent docs are needed and how they are governed |
@@ -137,7 +142,7 @@ Use Markdown checkboxes and strikethrough.
 
 # P0 — Working Rules Between Shubham and Assistant
 
-Status: In Progress
+Status: Complete
 
 ## Goal
 
@@ -147,21 +152,51 @@ P0 also defines the standing protocol that the assistant must follow before ever
 
 ## Tasks
 
-- [ ] P0-T01 Confirm that every assistant response should cover only 1–2 steps unless Shubham asks for more.
-- [ ] P0-T02 Confirm that the assistant must not create files, prompts, commands, docs, repo structure, setup steps, or artifacts without explicit approval.
-- [ ] P0-T03 Confirm that this file is the source of truth for setup sequence and progress.
-- [ ] P0-T04 Confirm that discussion and execution are separate.
-- [ ] P0-T05 Confirm that “approved” only means Shubham explicitly accepted an item.
-- [ ] P0-T06 Confirm that chat memory is not source of truth.
-- [ ] P0-T07 Confirm that no future docs, skills, subagents, ADRs, or product artifacts are pre-approved by appearing in discussion.
-- [ ] P0-T08 Confirm that the assistant must reference exact phase/task IDs before giving setup instructions.
-- [ ] P0-T09 Confirm that if the assistant drifts, Shubham can reset the work by pointing back to this file.
-- [ ] P0-T10 Confirm how this file itself will be updated.
-- [ ] P0-T11 Confirm whether updates to this file are done manually by Shubham, by patch/diff from assistant, or through repo changes.
-- [ ] P0-T12 Confirm what counts as completion of P0.
-- [ ] P0-T13 Confirm that P0 remains a standing protocol even after the phase is completed.
-- [ ] P0-T14 Confirm that every setup-related response must identify the current phase/task ID.
-- [ ] P0-T15 Confirm that if the assistant cannot access the latest task-list file, it must ask Shubham for the current file content or repo link before continuing setup work.
+- [x] ~~P0-T01 Confirm that every assistant response should cover only 1–2 steps unless Shubham asks for more.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved as part of P0 working rules.
+- [x] ~~P0-T02 Confirm that the assistant must not create files, prompts, commands, docs, repo structure, setup steps, or artifacts without explicit approval.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved as part of P0 working rules.
+- [x] ~~P0-T03 Confirm that this file is the source of truth for setup sequence and progress.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved as part of P0 working rules.
+- [x] ~~P0-T04 Confirm that discussion and execution are separate.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved as part of P0 working rules.
+- [x] ~~P0-T05 Confirm that “approved” only means Shubham explicitly accepted an item.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved as part of P0 working rules.
+- [x] ~~P0-T06 Confirm that chat memory is not source of truth.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved as part of P0 working rules.
+- [x] ~~P0-T07 Confirm that no future docs, skills, subagents, ADRs, or product artifacts are pre-approved by appearing in discussion.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved as part of P0 working rules.
+- [x] ~~P0-T08 Confirm that the assistant must reference exact phase/task IDs before giving setup instructions.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved as part of P0 working rules.
+- [x] ~~P0-T09 Confirm that if the assistant drifts, Shubham can reset the work by pointing back to this file.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved as part of P0 working rules.
+- [x] ~~P0-T10 Confirm how this file itself will be updated.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Task-list updates are normally done by Codex in this public repo after Shubham approves the change in ChatGPT. ChatGPT proposes/reviews. Codex applies repo edits only when Shubham explicitly approves.
+- [x] ~~P0-T11 Confirm whether updates to this file are done manually by Shubham, by patch/diff from assistant, or through repo changes.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Task-list updates are normally done by Codex in this public repo after Shubham approves the change in ChatGPT. ChatGPT proposes/reviews. Codex applies repo edits only when Shubham explicitly approves.
+- [x] ~~P0-T12 Confirm what counts as completion of P0.~~  
+  Completed: 2026-06-28  
+  Decision/Note: P0 is complete when the working rules, file location, file update method, source-of-truth rule, standing protocol rule, and mandatory read/reference rule are approved.
+- [x] ~~P0-T13 Confirm that P0 remains a standing protocol even after the phase is completed.~~  
+  Completed: 2026-06-28  
+  Decision/Note: P0 remains a standing protocol after completion.
+- [x] ~~P0-T14 Confirm that every setup-related response must identify the current phase/task ID.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved as part of P0 working rules.
+- [x] ~~P0-T15 Confirm that if the assistant cannot access the latest task-list file, it must ask Shubham for the current file content or repo link before continuing setup work.~~  
+  Completed: 2026-06-28  
+  Decision/Note: Approved as part of P0 working rules.
 
 ## Completion Criteria
 
@@ -182,7 +217,7 @@ Approved working agreement for how Shubham and the assistant proceed.
 
 # P1 — Define the Codex Operating System
 
-Status: Not Started
+Status: In Progress
 
 ## Goal
 
@@ -762,9 +797,9 @@ Approved long-term maintenance and learning loop.
 
 # Current Position
 
-Current Phase: P0 — Working Rules Between Shubham and Assistant  
-Current Task: P0-T13  
-Next Action: Shubham and assistant should approve that P0 is a standing protocol and that this task list must be read or referenced before every setup-related response.
+Current Phase: P1 — Define the Codex Operating System  
+Current Task: P1-T01  
+Next Action: Define what Codex is responsible for during setup.
 
 # Global Completion Criteria
 
